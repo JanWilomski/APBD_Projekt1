@@ -1,4 +1,6 @@
-﻿namespace APBD_Projekt1.Services;
+﻿using APBD_Projekt1.Models.Equipment;
+
+namespace APBD_Projekt1.Services;
 
 public class Rental
 {
@@ -8,13 +10,15 @@ public class Rental
     public DateTime MaxReturnDate { get; set; }
     public Equipment Equipment { get; set; }
     public bool? ReturnedInTime { get; private set; }
+    public int IdRental { get; }
+    private static int _nextId = 1;
 
     public Rental(DateTime rentalDate, DateTime maxReturnDate, Equipment equipment)
     {
         RentalDate = rentalDate;
         MaxReturnDate = maxReturnDate;
         Equipment = equipment;
-        
+        IdRental = _nextId++;
         
         
     }
