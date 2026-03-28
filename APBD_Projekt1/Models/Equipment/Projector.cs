@@ -10,4 +10,9 @@ public class Projector : Equipment
         ResolutionWidth = resolutionWidth;
         ResolutionHeight = resolutionHeight;
     }
+
+    public override string ToString()
+    {
+        return $"{base.ToString()}, Resolution: {ResolutionWidth}x{ResolutionHeight}";
+    }
 }

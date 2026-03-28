@@ -10,4 +10,9 @@ public class Laptop : Equipment
         StorageGB = storageGB;
         RamGB = ramGB;
     }
+
+    public override string ToString()
+    {
+        return $"{base.ToString()}, RAM: {RamGB}GB, Storage: {StorageGB}GB";
+    }
 }

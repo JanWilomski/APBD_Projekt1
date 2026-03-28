@@ -11,5 +11,8 @@ public class Camera : Equipment
         HasStabilization = hasStabilization;
     }
 
-
+    public override string ToString()
+    {
+        return $"{base.ToString()}, Resolution: {ResolutionMegapixels}MP, Stabilization: {HasStabilization}";
+    }
 }

@@ -15,5 +15,9 @@ public abstract class Equipment
         Name = name;
         IdEquipment = _nextId++;
     }
-    
+
+    public override string ToString()
+    {
+        return $"ID: {IdEquipment} {Name} ({GetType().Name}) - {AvailabilityStatus}";
+    }
 }

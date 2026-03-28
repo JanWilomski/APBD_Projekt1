@@ -1,6 +1,6 @@
 ﻿using APBD_Projekt1.Enums;
 
-namespace APBD_Projekt1;
+namespace APBD_Projekt1.Models;
 
 public class User
 {
