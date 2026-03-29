@@ -37,23 +37,8 @@ var rental2 = rentalService.RentEquipment(kacper, camera, 5);
 
 ui.PrintActiveRentals(kacper);
 
-try
-{
-    rentalService.RentEquipment(kacper, projector, 3);
-}
-catch (InvalidOperationException ex)
-{
-    Console.WriteLine($"Error: {ex.Message}");
-}
-
-try
-{
-    rentalService.RentEquipment(anna, projector2, 3);
-}
-catch (InvalidOperationException ex)
-{
-    Console.WriteLine($"Error: {ex.Message}");
-}
+rentalService.TryRentEquipment(kacper, projector, 3);
+rentalService.TryRentEquipment(anna, projector2, 3);
 
 var penalty1 = rentalService.ReturnEquipment(rental1, DateTime.Now);
 Console.WriteLine($"Returned: {laptop.Name}. Penalty: {penalty1} zł");

@@ -25,6 +25,19 @@ public class RentalService
         return rental;
     }
 
+    public Rental? TryRentEquipment(User user, Equipment equipment, int days, DateTime? startDate = null)
+    {
+        try
+        {
+            return RentEquipment(user, equipment, days, startDate ?? DateTime.Now);
+        }
+        catch (InvalidOperationException ex)
+        {
+            Console.WriteLine($"Cannot rent {equipment.Name}: {ex.Message}");
+            return null;
+        }
+    }
+
     public double ReturnEquipment(Rental rental, DateTime returnDate)
     {
         rental.Return(returnDate);
