@@ -56,7 +56,7 @@ catch (InvalidOperationException ex)
 }
 
 var penalty1 = rentalService.ReturnEquipment(rental1, DateTime.Now);
-Console.WriteLine($"Returned: {laptop.Name}. Penalty: {penalty1} PLN");
+Console.WriteLine($"Returned: {laptop.Name}. Penalty: {penalty1} zł");
 
 var overdueRental = rentalService.RentEquipment(anna, projector, 7, DateTime.Now.AddDays(-14));
 
